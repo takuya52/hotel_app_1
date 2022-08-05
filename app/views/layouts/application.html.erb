@@ -8,9 +8,39 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-left-nav">
+          <img class="header-logo" src="/assets/logo.png">    
+  
+          <div class="header-serch d-lg-inline-block d-none">
+            <input type="text" name="area" id="area" value class="form_control" placeholder="エリア">
+          </div>
+
+          <div class="header-serch d-lg-inline-block d-none">
+            <input type="area" name="keyword" id="keyword" value class="form_control" placeholder="キーワード">
+          </div>
+        </div>
+
+          <div class="header-right-nav">
+            <div class="nav-item">
+              <a class="btn btn-primary my-2 mx-3">ログイン</a>
+              <a class="btn btn-secondary">登録する</a>
+            </div>
+          </div>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <footer class="footer">
+      <p>©︎ 2022 POTEPAN.INC.</p>
+    </footer>
+
   </body>
 </html>
