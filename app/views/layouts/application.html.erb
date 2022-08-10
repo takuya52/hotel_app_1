@@ -27,12 +27,21 @@
 
         <div class="header-right-nav">
           <div class="nav-item d-sm-inline-block d-none">
-            <% if user_signed_in?%>
-              <%= current_user.name %>   
-            <div class="btn btn-primary my-2 mx-3">
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"link" %> 
-            </div>
+            <% if user_signed_in? %>
+              <%= current_user.name %>  
+            
+              <img class="host-icon" src="/assets/default_icon.jpeg">    
           </div>
+
+          <div class="nav-item">
+            <div class="navbar mx-3 p-1 host-icon nav-trigger">menu</div>
+              <ul class="header-nav-menu">
+                <li>ルーム登録</li>
+                <li>予約ルーム一覧</li>
+                <li>登録済みルーム一覧</li>
+                <li><%= link_to "設定", edit_user_registration_path %>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"link" %></li>
+              </ul>          
              <% else %>
               <div class="btn btn-primary my-2 mx-3">
                 <%= link_to "ログイン", new_user_session_path, class:"link" %> 
@@ -42,10 +51,18 @@
               </div>
               <% end %>
             </div>
+          </div>
         </div>
       </div>
     </header>
-
+  <div class="clearfix"></div>
+  <script>
+    $(function() {
+      $('.nav-trigger').click(function() {
+        $('.header-nav-menu').toggle(1500);
+      })
+    });
+  </script>
     <%= yield %>
 
     <footer class="footer">

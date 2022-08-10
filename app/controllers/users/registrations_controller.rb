@@ -62,12 +62,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
 protected
 
-def update_resources(resource, params)
+def update_resource(resource, params)
   resource.update_without_current_password(params)
 end
 
 def after_update_path_for(resource) 
-  edit_user_registration_path
+  users_profile_path
 end
 
 end
