@@ -54,16 +54,16 @@
         <div class="field">
           <div class="form-group">
             <%= f.label :current_password, "現在のパスワード" %> 
-            <%= f.password_field :current_password, autocomplete: "current-password", class: "form-controll", placeholder: "現在のパスワードを入力" %>
+            <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: "現在のパスワードを入力" %>
           </div>
         </div>
 
         <div class="actions">
-          <%= f.submit "更新", class: "form-control btn-plimary my-4" %>
+          <%= f.submit "更新", class: "form-control btn btn-primary my-4" %>
         </div>
       <% end %>
 
-      <%= link_to "戻る", :back, class: "btn-outline-secondary form-control"%>
+      <%= link_to "戻る", users_profile_path, class: "btn-outline-secondary form-control"%>
 
       <h3>アカウント削除</h3>
       <p>本当に削除しますか？ <%= button_to "削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
