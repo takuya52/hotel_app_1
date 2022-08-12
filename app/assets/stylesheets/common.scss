@@ -10,6 +10,7 @@
 }
 
 .header-right-nav {
+  display: flex;
   float: right;
 }
 
@@ -102,7 +103,9 @@ body {
 
 .header .nav-item {
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px 20px;
 }
 
 .host-icon{
@@ -111,3 +114,70 @@ body {
   object-fit: cover;
   border-radius: 50px;
 }
+
+.update-content {
+  border-bottom: 1px solid #eaedef;
+  padding: 20px;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.user-view-box {
+  max-width: 880px;
+  background-color: #fff;
+  border: 1px solid #eaedef;
+  margin: 30px auto;
+}
+
+.icon-box {
+  text-align: center;
+}
+
+/* 登録したroomの一覧表示に関するスタイル */
+.room-posts, .reservations {
+  max-width: 100vw;
+  padding: 30px 60px;
+}
+
+table {
+  border-collapse: collapse;
+  display: table;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: grey;
+}
+
+.room-posts table thead tr, .reservations table thead tr {
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.room-posts table thead th, .reservations table thead th {
+  padding: 8px 15px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: -internal-center;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.room-posts table tbody td, .reservations table tbody td {
+  padding: 10px;
+}
+

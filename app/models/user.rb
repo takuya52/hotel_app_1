@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  
+  has_many :rooms
   
   
   has_one_attached :image_name
