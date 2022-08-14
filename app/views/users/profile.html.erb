@@ -8,12 +8,9 @@
           <div class="col-md-9">
             <label class="col-md-3" for="name">プロフィール画像</label>
             <% if @user.image_name.attached? %>
-              
               <%= image_tag @user.image_name, class: "host-icon" %>
-              
             <% else %>
-              <img class="host-icon" src="/assets/default_icon.jpeg">  
-              
+              <img class="host-icon" src="/assets/default_icon.jpeg">
             <% end %>
           </div>
         </div>

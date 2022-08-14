@@ -12,10 +12,10 @@ class RoomsController < ApplicationController
     if @room.save
       flash[:notice] = "ルーム情報を登録しました"
       redirect_to :rooms
-   else
+    else
       flash[:alert] = "ルーム情報を登録できませんでした"
       render "new"
-   end
+    end
   end
 
   private

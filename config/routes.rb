@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'reservations/index'
+  get 'reservations/new'
+  get 'reservations/show'
   get 'rooms/index'
   get 'users/profile'
   get 'users/update'
@@ -12,9 +15,9 @@ Rails.application.routes.draw do
   
   root 'home#index'
   get 'home/index'
-  
-  resources :rooms
 
+  resources :rooms
+  resources :reservations
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

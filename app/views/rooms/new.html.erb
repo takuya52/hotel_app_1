@@ -20,6 +20,12 @@
       </div>
       <div class="update-content">
         <div class="row">
+          <%= f.label :single_rate, "料金", class: "col-md-3 required-a" %>
+          <%= f.text_field :single_rate, class: "form-control mb-4 col-md-9", placeholder: "1日あたりの料金を入力" %>
+        </div>
+      </div>
+      <div class="update-content">
+        <div class="row">
           <%= f.label :address, "住所", class: "col-md-3 required-a" %>
           <%= f.text_field :address, class: "form-control mb-4 col-md-9", placeholder: "住所を入力" %>
         </div>
