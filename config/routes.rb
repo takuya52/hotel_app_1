@@ -16,7 +16,12 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
 
-  resources :rooms
+  resources :rooms do
+    collection do
+      get 'search'
+    end
+  end
+
   resources :reservations
 
 

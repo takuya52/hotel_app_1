@@ -19,7 +19,7 @@
           <td><%= image_tag reservation.room.image_name, class: "room-image" %></td>
           <td><%= reservation.room.name %></td>
           <td><%= reservation.room.introduction %></td>
-          <td><%= @total_rate %></td>
+          <td><%= reservation.room.single_rate * reservation.number_of_people * (reservation.end_date - reservation.start_date).to_i %></td>
           <td><%= reservation.start_date %></td>
           <td><%= reservation.end_date %></td>
           <td><%= reservation.created_at.to_s(:datetime_jp) %></td>

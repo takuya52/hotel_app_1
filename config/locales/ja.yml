@@ -1,0 +1,16 @@
+ja:
+  errors:
+    messages:
+      not_saved: 登録できませんでした
+
+  activerecord:
+    attributes:
+      room:
+        name: ルーム名
+        introduction: ルーム紹介
+        single_rate: 1日あたりの料金
+        address: 住所
+        image_name: ルーム画像
+      
+      user:
+        signed_in:  ログインしました

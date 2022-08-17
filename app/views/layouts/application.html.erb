@@ -16,10 +16,14 @@
         <div class="header-left-nav">  
           <%= link_to image_tag("logo.png"), "/" %>
           <div class="header-serch d-lg-inline-block d-none">
-            <input type="text" name="area" id="area" value class="form_control" placeholder="エリア">
+            <%= search_form_for @q, url: search_rooms_path do |f| %>
+              <%= f.search_field :address_cont, placeholder: 'エリア' %>
+            <% end %>
           </div>
           <div class="header-serch d-lg-inline-block d-none">
-            <input type="area" name="keyword" id="keyword" value class="form_control" placeholder="キーワード">
+            <%= search_form_for @q, url: search_rooms_path do |f| %>
+              <%= f.search_field :name_or_introduction_or_address_cont, placeholder: 'キーワード' %>
+            <% end %>
           </div>
         </div>
 

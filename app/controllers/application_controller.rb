@@ -1,6 +1,14 @@
 class ApplicationController < ActionController::Base
+  
+  before_action :authenticate_user!, except:[:index]
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  before_action :set_q
+
+  def search
+    @results = @q.result
+  end
 
   def after_sign_in_path_for(resource) 
     users_profile_path
@@ -14,4 +22,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image_name, :introduction])
   end
   
+  private
+  
+  def set_q
+    @q = Room.ransack(params[:q])
+  end
+
+
 end

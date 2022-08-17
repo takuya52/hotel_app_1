@@ -3,6 +3,10 @@
     <div class="update-content">
       <div class="row">
         <h5>ルーム情報登録</h5>
+        <% if flash[:alert] %>
+          <p class = "alert"><%= flash[:alert] %>
+        <% end %>
+        <%= render "shared/error", obj: @room %>
       </div>
     </div>
     <%= form_with model: @room do |f| %>
