@@ -1,4 +1,5 @@
 <div class="container room-show">
+  <%= render "shared/error", obj: @reservation %>
   <div class="row">
     <div class="col-md-8">
       <%= image_tag @room.image_name, class: "room-show-image" %>
