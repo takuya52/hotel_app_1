@@ -5,12 +5,67 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-left-nav">  
+          <%= link_to image_tag("logo.png"), "/" %>
+          <div class="header-serch d-lg-inline-block d-none">
+            <%= search_form_for @q, url: search_rooms_path do |f| %>
+              <%= f.search_field :address_cont, placeholder: 'エリア' %>
+            <% end %>
+          </div>
+          <div class="header-serch d-lg-inline-block d-none">
+            <%= search_form_for @q, url: search_rooms_path do |f| %>
+              <%= f.search_field :name_or_introduction_or_address_cont, placeholder: 'キーワード' %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="header-right-nav">
+          <div class="nav-item">
+            <% if user_signed_in? %>
+              <%= current_user.name %> 
+          </div>
+          <div class="dropdown">
+            <button type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <% if current_user.image_name.attached? %>
+                <%= image_tag current_user.image_name, class: "host-icon" %>
+              <% else %>
+                <img class="host-icon" src="/assets/default_icon.jpeg">  
+              <% end %>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><%= link_to "ルーム登録", new_room_path, class:"dropdown-item" %></li>
+              <li><%= link_to "予約ルーム一覧", reservations_index_path, class:"dropdown-item" %></li>
+              <li><%= link_to "登録済みルーム一覧", rooms_index_path, class:"dropdown-item" %></li>
+              <li><%= link_to "設定", users_profile_path, class:"dropdown-item" %></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
+            </ul>
+          </div>
+        </div>
+
+            <% else %>
+              <div class="btn btn-primary my-2 mx-3">
+                <%= link_to "ログイン", new_user_session_path, class:"link" %> 
+              </div>
+              <div class="btn btn-secondary">
+                <%= link_to "登録する", new_user_registration_path, class:"link" %>
+              </div>
+            <% end %>
+      </div>
+    </header>
+    <p class="notice"><%= notice %>
     <%= yield %>
+
+    <footer class="footer">
+      <p>©︎ 2022 POTEPAN.INC.</p>
+    </footer>
+
   </body>
 </html>

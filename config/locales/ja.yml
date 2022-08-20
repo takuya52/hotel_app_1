@@ -1,0 +1,23 @@
+ja:
+  errors:
+    messages:
+      not_saved: 登録できませんでした
+  
+  devise:
+    sessions:
+      signed_in: ログインしました
+      signed_out: ログアウトしました
+
+  activerecord:
+    attributes:
+      room:
+        name: ルーム名
+        introduction: ルーム紹介
+        single_rate: 1日あたりの料金
+        address: 住所
+        image_name: ルーム画像
+      
+      reservation:
+        start_date: 開始日
+        end_date: 終了日
+        number_of_people: 人数
