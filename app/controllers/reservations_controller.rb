@@ -6,6 +6,7 @@ class ReservationsController < ApplicationController
   def new
     @room = Room.find(params[:id])
     @user_id = current_user.id
+    @user = User.find(params[:id])
     @reservation = Reservation.new
   end
 
@@ -17,6 +18,8 @@ class ReservationsController < ApplicationController
       flash[:notice] = "予約が完了しました"
       redirect_to reservation_path(@reservation.id)
     else
+      @room = Room.find(params[:reservation][:room_id])
+      @user = User.find(params[:reservation][:user_id])
       render :new
     end
   end

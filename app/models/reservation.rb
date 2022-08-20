@@ -2,6 +2,10 @@ class Reservation < ApplicationRecord
   belongs_to :room
   belongs_to :user
 
+  validates :start_date, presence:true
+  validates :end_date, presence:true
+  validates :number_of_people, presence:true, numericality: {only_integer: true, greater_than: 0}
+
   validate :start_end_check
   validate :start_date_before_today
 
